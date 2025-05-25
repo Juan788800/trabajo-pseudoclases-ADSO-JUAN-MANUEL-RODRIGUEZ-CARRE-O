@@ -1,0 +1,384 @@
+
+/* Elimina márgenes y rellenos por defecto de todos los elementos y usa el modelo de caja border-box */
+* {
+    margin: 0;                /* Quita el margen exterior de todos los elementos */
+    padding: 0;               /* Quita el relleno interior de todos los elementos */
+    box-sizing: border-box;   /* Incluye el padding y el borde dentro del ancho y alto total */
+}
+
+/* Estilos para el cuerpo de la página */
+body {
+    background-color: #1fa975;      /* Color de fondo verde */
+    font-family: Arial, sans-serif; /* Fuente principal de la página */
+}
+
+/* Estilos para el título principal */
+h1 {
+    color: white;           /* Color de texto blanco */
+    text-align: center;     /* Centra el texto horizontalmente */
+    margin-top: 30px;       /* Espacio superior de 30px */
+}
+
+/* Cuadro principal blanco que contiene el contenido central */
+.cuadro-blanco {
+    width: 90%;                             /* Ocupa el 90% del ancho de la ventana */
+    max-width: 1200px;                      /* Máximo ancho de 1200px */
+    margin: 40px auto;                      /* Centra el cuadro y agrega 40px de margen arriba y abajo */
+    background-color: white;                /* Fondo blanco */
+    padding: 2rem;                          /* Relleno interno de 2rem */
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2); /* Sombra para dar efecto de elevación */
+}
+
+/* Agrega un icono de teléfono antes del último elemento con clase 'telefono' en el menú */
+/* (Recomendado cambiar por un <i> en el HTML para mayor control) */
+.menu .telefono:last-of-type::before {
+    position: relative;         /* Posiciona el icono relativo a su posición normal */
+    font-family: "remixicon";   /* Usa la fuente Remixicon para mostrar el icono */
+    content: "\f2bb";           /* Código del icono de teléfono en Remixicon */
+    font-size: 32px;            /* Tamaño del icono */
+    left: -1px;                 /* Ajusta la posición hacia la izquierda */
+    bottom: -4px;               /* Ajusta la posición hacia abajo */
+}
+
+/* Menú */
+/* Elimina los puntos de la lista, el padding y agrega margen inferior al menú */
+.menu {
+  list-style: none;         /* Quita los bullets de la lista */
+  padding: 0;               /* Quita el padding por defecto */
+  margin-bottom: 2rem;      /* Espacio debajo del menú */
+}
+
+/* Cada elemento del menú se muestra en línea y con espacio a la derecha */
+.menu li {
+  display: inline-block;    /* Hace que los <li> estén en línea */
+  margin-right: 70px;       /* Espacio entre los ítems del menú */
+}
+
+/* Estilo general para los ítems del menú */
+.menu li {
+  color: #003b2b;           /* Color de texto */
+  font-weight: bold;        /* Texto en negrita */
+  padding: 10px;            /* Espaciado interno */
+}
+
+/* Estilo especial para el ítem de teléfono */
+.menu li.telefono {
+  color: #1a9264;           /* Color verde para el teléfono */
+  font-weight: bold;        /* Texto en negrita */
+}
+
+/* Clase adicional para el teléfono si se usa */
+.menu .phone {
+  color: #039436;           /* Otro tono de verde para el teléfono */
+}
+
+/* Limpia los floats dentro de .contenido */
+.contenido::after {
+  content: "";              /* Genera un contenido vacío */
+  display: block;           /* Lo muestra como bloque */
+  clear: both;              /* Limpia los floats a izquierda y derecha */
+}
+
+/* Hace que los hijos directos de .contenido floten a la izquierda y tengan ancho y separación */
+.contenido > div {
+  float: left;              /* Flota los divs a la izquierda */
+  width: 48%;               /* Ancho de cada columna */
+  margin-right: 2%;         /* Espacio entre columnas */
+  margin-bottom: 2rem;      /* Espacio debajo de cada columna */
+}
+
+/* Columna izquierda: ocupa el mismo espacio que el float */
+.izquierda {
+  flex: 1;                  /* Permite que crezca si se usa flexbox */
+}
+
+.izquierda h2 {
+    font-size: 28px;           /* Tamaño de fuente grande para el título */
+    margin-bottom: 1rem;       /* Espacio debajo del título */
+    color: #003b2b;            /* Color verde oscuro */
+}
+
+.izquierda span {
+    color: #39c199;            /* Color verde claro para resaltar el span */
+}
+
+.izquierda p {
+    margin-bottom: 1.5rem;     /* Espacio debajo del párrafo */
+    color: #555;               /* Color gris oscuro para el texto */
+}
+
+/* Botón principal: agrega un ícono de calendario antes del texto */
+.btn::before {
+    content: "\f009";          /* Ícono de calendario de RemixIcon */
+    font-family: "remixicon";  /* Usa la fuente Remixicon */
+    margin-right: 8px;         /* Espacio entre el ícono y el texto */
+    font-size: 18px;           /* Tamaño del ícono */
+    position: relative;        /* Posiciona el ícono relativo al texto */
+    top: 2px;                  /* Ajusta la posición vertical del ícono */
+}
+
+/* Botón secundario: fondo transparente, borde blanco inicialmente */
+.btn.sec {
+    background-color: transparent; /* Fondo transparente */
+    color: white;                  /* Texto blanco */
+    border: 2px solid white;       /* Borde blanco */
+    border-radius: 25px;           /* Bordes redondeados */
+    padding: 10px 20px;            /* Espaciado interno */
+    cursor: pointer;               /* Cursor tipo mano al pasar */
+    transition: all 0.3s ease;     /* Transición suave en hover */
+    font-weight: bold;             /* Texto en negrita */
+}
+
+/* Botón secundario al hacer hover: cambia el borde y el texto a negro */
+.btn.sec:hover {
+    border-color: black;           /* Borde negro */
+    color: black;                  /* Texto negro */
+}
+
+/* Botón principal: fondo verde, texto oscuro, borde verde */
+.btn.btn {
+    background-color: #1a9264;     /* Fondo verde */
+    color: #03100b;                /* Texto verde muy oscuro */
+    border: 2px solid #1a9264;     /* Borde verde */
+    border-radius: 25px;           /* Bordes redondeados */
+    padding: 10px 20px;            /* Espaciado interno */
+    cursor: pointer;               /* Cursor tipo mano al pasar */
+    transition: all 0.3s ease;     /* Transición suave en hover */
+    font-weight: bold;             /* Texto en negrita */
+}
+
+/* Botón principal al hacer hover: fondo transparente, borde y texto negros */
+.btn.btn:hover {
+    border-color: black;           /* Borde negro */
+    color: black;                  /* Texto negro */
+    background-color: transparent; /* Fondo transparente */
+}
+/* Columna derecha (formulario) */
+.derecha {
+    flex: 1;                        /* Permite que crezca si se usa flexbox */
+    background-color: #f9f9f9;      /* Fondo gris muy claro para diferenciar el formulario */
+    padding: 1.5rem;                /* Espaciado interno */
+    border-radius: 10px;            /* Bordes redondeados */
+}
+
+.derecha h3 {
+    color: #017b5f;                 /* Color verde para el título */
+    margin-bottom: 1rem;            /* Espacio debajo del título */
+    font-size: 20px;                /* Tamaño de fuente */
+}
+
+.derecha form {
+    display: flex;                  /* Usa flexbox para el formulario */
+    flex-direction: column;         /* Organiza los campos en columna */
+}
+
+.derecha input {
+    padding: 10px;                  /* Espaciado interno */
+    margin-bottom: 15px;            /* Espacio debajo de cada input */
+    border: 1px solid #ccc;         /* Borde gris claro */
+    border-radius: 5px;             /* Bordes redondeados */
+}
+
+.fila {
+    display: flex;                  /* Muestra los inputs de fecha y hora en fila */
+    gap: 10px;                      /* Espacio entre los inputs */
+}
+
+.derecha .btn {
+    background-color: #39c199;      /* Fondo verde claro */
+    border: none;                   /* Sin borde */
+    padding: 10px;                  /* Espaciado interno */
+    border-radius: 25px;            /* Bordes redondeados */
+    color: white;                   /* Texto blanco */
+    font-weight: bold;              /* Texto en negrita */
+    cursor: pointer;                /* Cursor tipo mano al pasar */
+}
+
+/* Barra lateral de iconos sociales */
+.barra {
+    position: fixed;                /* Fija la barra en la pantalla */
+    top: 13.4%;                     /* Distancia desde la parte superior */
+    left: 6%;                       /* Distancia desde la izquierda */
+    width: 5%;                      /* Ancho de la barra */
+    height: 73.2%;                  /* Alto de la barra */
+    background-color: #08544c;      /* Fondo verde oscuro */
+    padding: 10px 0;                /* Espaciado interno arriba y abajo */
+}
+
+.barra ul {
+    list-style: none;               /* Quita los bullets de la lista */
+    padding: 0;                     /* Sin padding */
+    margin: 0;                      /* Sin margen */
+    text-align: center;             /* Centra los íconos */
+}
+
+.barra ul li {
+    margin: 20px 0;                 /* Espacio vertical entre íconos */
+    cursor: pointer;                /* Cursor tipo mano al pasar */
+    font-size: 14px;                /* Tamaño de fuente base */
+    color: #000;                    /* Color de texto (puedes cambiarlo si usas solo íconos) */
+}
+
+.barra ul li i {
+    display: block;                 /* Muestra el ícono como bloque */
+    margin-bottom: 5px;             /* Espacio debajo del ícono */
+    font-size: 18px;                /* Tamaño del ícono */
+}
+.icono-twitter::before {
+    position: relative;           /* Posiciona el icono relativo a su posición normal */
+    margin-left: 10px;            /* Espacio a la izquierda */
+    align-items: center;          /* Centra verticalmente si se usa flex (no aplica aquí) */
+    top: 220px;                   /* Desplaza el icono hacia abajo (ajusta según necesidad) */
+    font-family: "remixicon";     /* Usa la fuente Remixicon */
+    content: "\f23a";             /* Código del icono de Twitter en Remixicon */
+    font-size: 38px;              /* Tamaño del icono */
+    color: #1a9264;               /* Color verde */
+}
+
+.icono-youtube::before {
+    position: relative;
+    margin-right: auto;
+    align-items: center;
+    top: 210px;
+    font-family: "remixicon";
+    content: "\f2d4";             /* Código del icono de YouTube en Remixicon */
+    font-size: 38px;
+    color: #1a9264;
+}
+
+.icono-instagram::before {
+    position: relative;
+    margin-right: auto;
+    align-items: center;
+    top: 220px;
+    font-family: "remixicon";
+    content: "\ee66";             /* Código del icono de Instagram en Remixicon */
+    font-size: 38px;
+    color: #1a9264;
+}
+
+.icono-facebook::before {
+    position: relative;
+    margin-right: auto;
+    align-items: center;
+    top: 220px;
+    font-family: "remixicon";
+    content: "\ecbc";             /* Código del icono de Facebook en Remixicon */
+    font-size: 38px;
+    color: #1a9264;
+}
+
+.icono-casa::before {
+    position: relative;
+    margin-right: auto;
+    align-items: center;
+    top: 10px;
+    font-family: "remixicon";
+    content: "\f578";             /* Código del icono de casa en Remixicon */
+    font-size: 38px;
+    color: #1a9264;
+}
+
+/* Indicadores tipo slider/carrusel */
+.indicadores {
+    margin-top: 30px;             /* Espacio superior */
+}
+
+.punto {
+    display: inline-block;        /* Muestra los puntos en línea */
+    width: 12px;                  /* Ancho del punto */
+    height: 12px;                 /* Alto del punto */
+    margin: 0 5px;                /* Espacio horizontal entre puntos */
+    background-color: rgba(255, 255, 255, 0.336); /* Fondo semitransparente */
+    border-radius: 50%;           /* Hace el punto circular */
+    cursor: pointer;              /* Cursor tipo mano */
+    transition: background-color 0.3s ease; /* Transición suave */
+}
+
+.indicadores::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgb(230, 221, 221); /* color normal */
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+}
+
+.punto.activo {
+    background-color: white;      /* Punto activo en blanco */
+}
+
+.punto.activo::before {
+    background-color: black;      /* Si está activo, cambia a negro */
+}
+
+/* Imagen de la columna izquierda */
+.izquierda img {
+    max-width: 120%;              /* Permite que la imagen sobresalga un poco del contenedor */
+    height: auto;                 /* Mantiene la proporción */
+    margin-bottom: 1.5rem;        /* Espacio debajo de la imagen */
+    display: block;               /* Quita espacios extra debajo de la imagen */
+    object-fit: cover;            /* Cubre el área del contenedor sin deformar */
+}
+
+.imagen-filtro-verde {
+    position: relative;                /* Permite posicionar elementos hijos absolutamente respecto a este contenedor */
+    display: inline-block;             /* Hace que el contenedor solo ocupe el espacio necesario */
+    overflow: hidden;                  /* Oculta cualquier contenido que se salga del contenedor */
+}
+
+.imagen-filtro-verde img {
+    display: block;                    /* Elimina espacios debajo de la imagen */
+    width: 100%;                       /* La imagen ocupa todo el ancho del contenedor */
+    height: auto;                      /* Mantiene la proporción de la imagen */
+    object-fit: cover;                 /* La imagen cubre el área del contenedor sin deformarse */
+}
+
+.imagen-filtro-verde::after {
+    content: "";                       /* Genera un pseudo-elemento vacío */
+    position: absolute;                /* Posiciona el pseudo-elemento sobre la imagen */
+    top: 0; left: 0; right: 0; bottom: 0; /* Cubre todo el contenedor */
+    background-color: rgba(8, 84, 76, 0.6); /* Aplica un filtro verde semitransparente */
+    pointer-events: none;              /* Permite que los clics pasen a través del filtro */
+}
+
+.texto-sobre-imagen {
+    position: absolute;                /* Posiciona el texto sobre la imagen */
+    top: 50%;                          /* Centra verticalmente */
+    left: 50%;                         /* Centra horizontalmente */
+    transform: translate(-50%, -50%);  /* Ajusta el centro exacto */
+    text-align: center;                /* Centra el texto */
+    padding: 20px;                     /* Espaciado interno */
+    width: 90%;                        /* El texto ocupa el 90% del ancho del contenedor */
+}
+
+.texto-sobre-imagen .botones {
+    margin-top: 60px;                  /* Espacio superior para separar los botones del texto */
+}
+
+.texto-sobre-imagen h2 {
+    color: white;                      /* Título en blanco para destacar sobre el fondo */
+}
+
+.texto-sobre-imagen p {
+    color: #faf4f4;                    /* Texto en blanco suave */
+    font-weight: 600;                  /* Texto semi-negrita */
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.6); /* Sombra para mejorar la legibilidad */
+    margin-top: 20px !important;       /* Espacio superior, con !important para sobrescribir otros estilos */
+}
+
+.derecha h3 {
+    text-align: center;                /* Centra el título del formulario */
+}
+
+.derecha {
+    border: 2px solid transparent;     /* Borde invisible, solo para mantener el espacio */
+    padding: 20px;                     /* Espaciado interno */
+    border-radius: 8px;                /* Bordes redondeados */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra suave para dar profundidad */
+    max-width: 700px;                  /* Máximo ancho del formulario */
+    margin: 0 auto;                    /* Centra el formulario horizontalmente */
+    background-color: white;           /* Fondo blanco para destacar el formulario */
+}

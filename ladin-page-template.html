@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en"> <!-- Indica que el idioma del documento es inglés -->
+<head>
+  <meta charset="UTF-8" /> <!-- Define la codificación de caracteres como UTF-8 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/> <!-- Permite un diseño responsivo en dispositivos móviles -->
+  <title>Landing Page</title> <!-- Título de la página que se muestra en la pestaña del navegador -->
+  
+  <!-- Enlace a una hoja de estilos externa -->
+  <link rel="stylesheet" href="ladin-page-template.css"/>
+
+  <!-- Enlace a la librería de íconos Remix Icon -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css"/>
+</head>
+
+<body>
+
+  <h1>Landing Page Template</h1> <!-- Título principal de la página -->
+
+  <div class="cuadro-blanco"> <!-- Contenedor principal blanco -->
+
+    <!-- Menú de navegación -->
+    <nav class="navbar">
+      <ul class="menu">
+        <li>Home</li>
+        <li>Services</li>
+        <li>About Us</li>
+        <li>Appointment</li>
+        <li>Contact</li>
+        <li class="telefono">(+605) 1234-56789</li> <!-- Número de teléfono de contacto -->
+      </ul>
+    </nav>
+
+    <!-- Barra de iconos sociales -->
+    <div class="barra">
+      <ul>
+        <li><i class="icono-casa"></i></li>
+        <li><i class="icono-twitter"></i></li>
+        <li><i class="icono-facebook"></i></li>
+        <li><i class="icono-instagram"></i></li>
+        <li><i class="icono-youtube"></i></li>
+      </ul>
+    </div>
+
+    <!-- Contenido principal dentro del cuadro blanco -->
+    <div class="contenido">
+      
+      <!-- Columna izquierda -->
+      <div class="izquierda">
+        <div class="imagen-filtro-verde">
+          <img src="imagen-dental.jpg" alt="dental"/> <!-- Imagen principal -->
+          <div class="texto-sobre-imagen">
+            <h2>Full Dedicated<br>To Your <span>Dental Health.</span></h2> <!-- Título sobre la imagen -->
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p> <!-- Descripción corta -->
+            
+            <!-- Botones de acción -->
+            <div class="botones">
+              <button class="btn">Book now</button> <!-- Botón para reservar -->
+              <button class="btn sec">Read more</button> <!-- Botón para más información -->
+
+              <!-- Indicadores tipo slider o carrusel -->
+              <div class="indicadores">
+                <span class="punto activo"></span>
+                <span class="punto"></span>
+                <span class="punto"></span>
+                <span class="punto"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Columna derecha -->
+      <div class="derecha">
+        <h3>Book an Appointment</h3> <!-- Título del formulario -->
+
+        <!-- Formulario de reserva -->
+        <form>
+          <input type="text" placeholder="Your first name*" required />
+          <input type="text" placeholder="Your last name*" required />
+          <input type="email" placeholder="Your email address*" required />
+          <input type="tel" placeholder="Your contact no*" required />
+
+          <!-- Fila con fecha y hora -->
+          <div class="fila">
+            <input type="date" required />
+            <input type="time" required />
+          </div>
+
+          <!-- Botón para enviar el formulario -->
+          <button type="submit" class="btn">Book now</button>
+        </form>
+      </div>
+
+    </div>
+
+  </div>
+
+</body>
+</html>
+

@@ -1,0 +1,207 @@
+.card {
+  position: relative;
+  width: 300px;
+  padding: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.btn-eliminar {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background-color: red;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  font-size: 16px;
+  cursor: pointer;
+  line-height: 20px;
+  text-align: center;
+  padding: 0;
+}
+
+.btn-eliminar:hover {
+  background-color: darkred;
+}
+
+
+/* Estilo de la barra de navegación */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #333;
+  padding: 12px 20px;
+  z-index: 1000;
+}
+
+.nav-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.nav-links li a:hover {
+  text-decoration: underline;
+}
+
+/* Agregamos relleno arriba para evitar que el contenido se esconda detrás de la barra */
+.contenido {
+  padding-top: 70px;
+  padding: 70px 20px 20px;
+}
+
+
+
+.caja {
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  color: white;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: sans-serif;
+  font-size: 20px;
+}
+
+/* Caja inferior */
+.caja1 {
+  background-color: blue;
+  z-index: 1;
+}
+
+/* Caja superior */
+.caja2 {
+  background-color: red;
+  z-index: 2;
+  left: 100px;
+  top: 100px;
+}
+
+
+
+.card-centrada {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  
+  width: 300px;
+  padding: 20px;
+  background-color: #fefefe;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  font-family: sans-serif;
+}
+
+:root {
+  --color-primario: #4a90e2; /* Azul como color primario */
+}
+
+.titulo {
+  color: var(--color-primario);
+}
+
+.btn {
+  background-color: var(--color-primario);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.texto {
+  border-left: 4px solid var(--color-primario);
+  padding-left: 10px;
+}
+
+
+
+/* Variables globales para tema claro */
+:root {
+  --color-fondo: #ffffff;
+  --color-texto: #000000;
+  --color-primario: #4a90e2;
+}
+
+/* Tema oscuro sobrescribe las variables */
+.dark-theme {
+  --color-fondo: #121212;
+  --color-texto: #f0f0f0;
+  --color-primario: #bb86fc;
+}
+
+/* Aplicación de variables */
+body {
+  background-color: var(--color-fondo);
+  color: var(--color-texto);
+  font-family: sans-serif;
+  transition: background-color 0.3s, color 0.3s;
+  padding: 20px;
+}
+
+.contenedor {
+  border: 2px solid var(--color-primario);
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.titulo {
+  color: var(--color-primario);
+}
+
+button {
+  background-color: var(--color-primario);
+  color: var(--color-fondo);
+  border: none;
+  padding: 10px 15px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.titulo {
+  color: var(--color-titulo, #ff5733); 
+  font-family: sans-serif;
+}
+
+
+.card {
+  --color-fondo: #f0f0f0;
+  --color-texto: #333;
+  --color-borde: #999;
+
+  background-color: var(--color-fondo);
+  color: var(--color-texto);
+  border: 2px solid var(--color-borde);
+  padding: 16px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.card.otra {
+  --color-fondo: #e0f7fa;
+  --color-texto: #006064;
+  --color-borde: #4dd0e1;
+}
